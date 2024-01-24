@@ -45,6 +45,7 @@ function App() {
               <h3>Task 1</h3>
               <p>Description</p>
             </div>
+            
             <div className='icon-area'>
               <AiOutlineDelete className='icon'/>
               <BsCheckLg className='check-icon' />
