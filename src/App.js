@@ -1,5 +1,5 @@
 import './App.css';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import { AiOutlineDelete } from "react-icons/ai";
 import { BsCheckLg } from "react-icons/bs";
 
@@ -18,7 +18,14 @@ function App() {
     let updateTodoArr = [...allTodos]
     updateTodoArr.push(newTodo);
     setAllTodos(updateTodoArr);
+    localStorage.setItem('todolist', JSON.stringify(updateTodoArr));
   };
+
+  useEffect(() => {
+    let savedTodo = JSON.parse(localStorage.getItem('todolist'));
+    if(savedTodo)
+        setAllTodos(savedTodo);
+  }, []);
 
   return (
     <div className="App">
