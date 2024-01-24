@@ -1,6 +1,9 @@
 import './App.css';
+import {useState} from 'react';
 
 function App() {
+  const [isTaskCompleted, setIsTaskCompleted] = useState(false);
+
   return (
     <div className="App">
       <h1>My Todos</h1>
@@ -20,8 +23,18 @@ function App() {
         </div>
 
         <div className="btn-area">
-          <button className="secondary-btn">Todo</button>
-          <button className="secondary-btn">Completed</button>
+          <button 
+             className={`secondary-btn ${isTaskCompleted === false && 'active'}`}
+             onClick={() => setIsTaskCompleted(false)}
+          >
+            Todo
+          </button>
+          <button 
+             className={`secondary-btn ${isTaskCompleted === true && 'active'}`}
+             onClick={() => setIsTaskCompleted(true)}
+          >
+            Completed
+          </button>
         </div>
 
         <div className="todo-list-area">

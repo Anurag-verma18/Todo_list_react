@@ -78,3 +78,7 @@ h1 {
     width: fit-content;
     cursor: pointer;
 }
+
+.active {
+    background-color: rgb(0, 230, 122);
+}
