@@ -95,3 +95,8 @@ h1 {
     padding: 0.2rem 1.5rem;
     margin-top: 0.6rem;
 }
+
+.todo-list-item .icon-area {
+    display: flex;
+    align-items: center;
+}

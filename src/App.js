@@ -1,5 +1,7 @@
 import './App.css';
 import {useState} from 'react';
+import { AiOutlineDelete } from "react-icons/ai";
+import { BsCheckLg } from "react-icons/bs";
 
 function App() {
   const [isTaskCompleted, setIsTaskCompleted] = useState(false);
@@ -43,8 +45,9 @@ function App() {
               <h3>Task 1</h3>
               <p>Description</p>
             </div>
-            <div>
-              
+            <div className='icon-area'>
+              <AiOutlineDelete className='icon'/>
+              <BsCheckLg className='check-icon' />
             </div>
           </div>
         </div>
