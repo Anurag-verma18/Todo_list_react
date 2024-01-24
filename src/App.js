@@ -7,11 +7,11 @@ function App() {
       <div className="todo-wrapper">
         <div className="input-area">
           <div className="input-items">
-            <label>Title</label>
+            <label>Title:</label>
             <input type="text" placeholder="What's the task title?"/>
           </div>
           <div className="input-items">
-            <label>Description</label>
+            <label>Description:</label>
             <input type="text" placeholder="What's the task description?"/>
           </div>
           <div className="input-items">
@@ -20,8 +20,8 @@ function App() {
         </div>
 
         <div className="btn-area">
-          <button>Todo</button>
-          <button>Completed</button>
+          <button className="secondary-btn">Todo</button>
+          <button className="secondary-btn">Completed</button>
         </div>
 
         <div className="todo-list-area">
