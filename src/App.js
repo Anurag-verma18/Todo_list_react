@@ -5,6 +5,20 @@ import { BsCheckLg } from "react-icons/bs";
 
 function App() {
   const [isTaskCompleted, setIsTaskCompleted] = useState(false);
+  const [allTodos, setAllTodos] = useState([]);
+  const [newTitle, setNewTitle] = useState("");
+  const [newDescription, setNewDescription] = useState("");
+
+  const handleAddTodo = () => {
+    let newTodo = {
+      title: newTitle,
+      description: newDescription
+    }
+
+    let updateTodoArr = [...allTodos]
+    updateTodoArr.push(newTodo);
+    setAllTodos(updateTodoArr);
+  };
 
   return (
     <div className="App">
@@ -13,14 +27,18 @@ function App() {
         <div className="input-area">
           <div className="input-items">
             <label>Title:</label>
-            <input type="text" placeholder="What's the task title?"/>
+            <input type="text" placeholder="What's the task title?"
+                value = {newTitle} onChange={(e) => setNewTitle(e.target.value)}
+            />
           </div>
           <div className="input-items">
             <label>Description:</label>
-            <input type="text" placeholder="What's the task description?"/>
+            <input type="text" placeholder="What's the task description?"
+                value = {newDescription} onChange={(e) => setNewDescription(e.target.value)}
+            />
           </div>
           <div className="input-items">
-            <button className="input-add-btn">Add</button>
+            <button className="input-add-btn" onClick={handleAddTodo}>Add</button>
           </div>
         </div>
 
@@ -45,7 +63,7 @@ function App() {
               <h3>Task 1</h3>
               <p>Description</p>
             </div>
-            
+
             <div className='icon-area'>
               <AiOutlineDelete className='icon'/>
               <BsCheckLg className='check-icon' />
