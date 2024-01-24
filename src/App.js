@@ -58,17 +58,21 @@ function App() {
         </div>
 
         <div className="todo-list-area">
-          <div className="todo-list-item">
-            <div>
-              <h3>Task 1</h3>
-              <p>Description</p>
-            </div>
+          {allTodos.map((item) => {
+            return (
+              <div className="todo-list-item" key={item.title}>
+                <div>
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                </div>
 
-            <div className='icon-area'>
-              <AiOutlineDelete className='icon'/>
-              <BsCheckLg className='check-icon' />
-            </div>
-          </div>
+                <div className='icon-area'>
+                  <AiOutlineDelete className='icon'/>
+                  <BsCheckLg className='check-icon' />
+                </div>
+              </div>
+            )
+          })}
         </div>
       </div>
     </div>
